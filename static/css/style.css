@@ -1,0 +1,27 @@
+ul.errorlist {
+    padding : 10px;
+    background-color: red;
+    border-radius: 5px;
+}
+ul.errorlist li{
+    list-style :none ;
+    color: white;
+    font-size: 0.8em;
+}
+.helptext {
+    padding: 10px 0;
+    color: #3fa538;
+    font-size: 80%;
+}
+.google_image {
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+}
+.google_image img {
+    height: 48px;
+}
