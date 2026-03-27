@@ -234,6 +234,10 @@ if RENDER:
     ]
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+    # 管理者設定用    
+    SUPERUSER_NAME = env.str('SUPERUSER_NAME')
+    SUPERUSER_EMAIL = env.str('SUPERUSER_EMAIL')
+    SUPERUSER_PASSWORD = env.str('SUPERUSER_PASSWORD')
 
 # MariaDBで発生する「条件付きの重複禁止ルール」の警告を消す設定
 SILENCED_SYSTEM_CHECKS = ['models.W036']
