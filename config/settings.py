@@ -30,11 +30,13 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG')
 
-USE_X_FORWARDED_HOST = True
+ALLOWED_HOSTS = ['*']
 
+USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['*']
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -154,13 +156,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # フォーム処理を実行可能なドメイン設定
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.github.dev',
-    'https://*.app.github.dev', 
+    'https://*.github.dev','https://*.app.github.dev', 
     'https://localhost:8080',
 ]
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
 # フラッシュメッセージ設定
 from django.contrib.messages import constants as messages
@@ -241,3 +239,4 @@ if RENDER:
 
 # MariaDBで発生する「条件付きの重複禁止ルール」の警告を消す設定
 SILENCED_SYSTEM_CHECKS = ['models.W036']
+
